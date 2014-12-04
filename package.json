@@ -1,12 +1,9 @@
 {
-    "name": "nodefoler",
+    "name": "oni-exdoc",
     "version": "0.0.1",
-    "description": "List all the files in a directory!",
+    "description": "avalon.oniui的示例源代码生成器",
     "preferGlobal": "true",
     "bin": { "oni-exdoc": "index.js" },
     "author": "heiwu805@hotmail.com",
-    "engines": { "node": "*" },
-    "devDependencies": {
-    	
-    }
+    "engines": { "node": "*" }
 }
