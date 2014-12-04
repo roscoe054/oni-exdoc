@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "description": "List all the files in a directory!",
     "preferGlobal": "true",
-    "bin": { "nf": "nodefolder.js" },
+    "bin": { "oni-exdoc": "index.js" },
     "author": "heiwu805@hotmail.com",
     "engines": { "node": "*" },
     "devDependencies": {

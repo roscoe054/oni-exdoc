@@ -71,7 +71,7 @@ function handleFileList(files){
 // 处理文件项
 function handleFile(file){
     // 显示正在处理的文件
-    console.log("notes gen \t" + file)
+    console.log("generating source code for " + file)
 
     // 读入
     fs.readFile(file, function(e, htmlText){
