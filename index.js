@@ -6,7 +6,7 @@ var fs = require("fs"),
     html_beautify = require('./html_beautify').style_html,
     input = ""
 
-// 变量
+// 文件计数
 var fileNumCount = 0,
     fileDoneCount = 0
 
