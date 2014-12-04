@@ -21,19 +21,23 @@ if (program.readHelp) {
     console.log("  - here are options:")
 }
 
-// 处理输入的路径或文件
-input = process.argv[2]
-if (typeof input === "undefined") {
-    console.log("  - you need to input a file path, like 'nf ./', or a file name like 'nf ./avalon.carousel.ex1.html'")
-} else{
-    if(fs.statSync(input).isDirectory()) { // 参数为路径
-        var fileList = []
+// 处理入口
+main(process.argv[2])
 
-        getFileList(process.argv[2], fileList)
-        handleFileList(fileList)
-    } else { // 参数为文件
-        fileNumCount = 1
-        handleFile(input)
+// 处理输入的路径或文件
+function main(input){
+    if (typeof input === "undefined") {
+        console.log(" - you need to type in a file path, like 'oniexdoc ./', or a file name like 'oniexdoc ./avalon.carousel.ex.html'")
+    } else{
+        if(fs.statSync(input).isDirectory()) { // 参数为路径
+            var fileList = []
+
+            getFileList(input, fileList)
+            handleFileList(fileList)
+        } else { // 参数为文件
+            fileNumCount = 1
+            handleFile(input)
+        }
     }
 }
 
@@ -119,3 +123,5 @@ function handleFile(file){
         })
     })
 }
+
+exports.oniexdoc = main;

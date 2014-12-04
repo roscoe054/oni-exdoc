@@ -1,9 +1,9 @@
 {
-    "name": "oni-exdoc",
+    "name": "oniexdoc",
     "version": "0.0.1",
     "description": "avalon.oniui的示例源代码生成器",
     "preferGlobal": "true",
-    "bin": { "oni-exdoc": "index.js" },
+    "bin": { "oniexdoc": "index.js" },
     "author": "heiwu805@hotmail.com",
     "engines": { "node": "*" }
 }
