@@ -35,8 +35,10 @@
                 <div ms-widget="carousel,carousel,$opt"></div>
             </fieldset>
             <pre ms-skip="" class="brush:html;gutter:false;toolbar:false">
-
-&lt;head&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    
+    &lt;head&gt;
         &lt;title&gt;carousel组件&lt;/title&gt;
         &lt;meta charset="UTF-8"&gt;
         &lt;meta name="viewport" content="width=device-width"&gt;
@@ -48,11 +50,11 @@
                 avalon.define("demo", function(vm) {
                     vm.$opt = {
                         pictures: [
-                            "http://placehold.it/500x200/333/dddddd.jpg&amp;text=slide1",
-                            "http://placehold.it/500x200/555/dddddd.jpg&amp;text=slide2",
-                            "http://placehold.it/500x200/777/dddddd.jpg&amp;text=slide3",
-                            "http://placehold.it/500x200/999/dddddd.jpg&amp;text=slide4",
-                            "http://placehold.it/500x200/aaa/dddddd.jpg&amp;text=slide5"
+                            "http://placehold.it/500x200/333/dddddd.jpg&text=slide1",
+                            "http://placehold.it/500x200/555/dddddd.jpg&text=slide2",
+                            "http://placehold.it/500x200/777/dddddd.jpg&text=slide3",
+                            "http://placehold.it/500x200/999/dddddd.jpg&text=slide4",
+                            "http://placehold.it/500x200/aaa/dddddd.jpg&text=slide5"
                         ]
                     }
                     vm.$skipArray = ["carousel"]
@@ -69,11 +71,10 @@
                 &lt;legend&gt;默认配置图片轮播&lt;/legend&gt;
                 &lt;div ms-widget="carousel,carousel,$opt"&gt;&lt;/div&gt;
             &lt;/fieldset&gt;
-            
         &lt;/div&gt;
-    
+    &lt;/body&gt;
 
-&lt;/body&gt;
+&lt;/html&gt;
 </pre>
         </div>
     </body>

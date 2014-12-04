@@ -2,13 +2,12 @@
 // 引入模块
 var fs = require("fs"),
     options = process.argv,
-    $ = require("./jquery"),
-    jsdom = require('jsdom'),
     program = require('./commander/index'),
     html_beautify = require('./html_beautify').style_html,
     input = ""
+
 // 变量
-    fileNumCount = 0,
+var fileNumCount = 0,
     fileDoneCount = 0
 
 // 设置选项
@@ -73,31 +72,25 @@ function handleFileList(files){
 // 处理文件项
 function handleFile(file){
     // 显示正在处理的文件
-    console.log("handling... \t" + file)
+    console.log("notes gen \t" + file)
 
     // 读入
-    jsdom.env(file, function(e, window){
+    fs.readFile(file, function(e, data){
         if (e) {
             throw e
         }
 
-        var pre = $(window).find("pre")[0],
-            preStartLocation = 0,
-            preEndLocation = 0,
-            codeContent = "",
-            htmlContent = ""
+        data = data.toString()
 
-        // pre清空
-        pre.innerHTML = ""
+        // 位置相关
+        var preStartLabel = data.match(/<pre .+>/)[0],
+            preStartLocation = data.indexOf("<pre"),
+            preEndLocation = data.indexOf("</pre>") + 6,
+            codeStartLocation = data.indexOf(preStartLabel) + preStartLabel.length,
+            codeEndLocation = data.indexOf("</pre>")
 
-        // 取pre还存在时的html
-        codeContent = $(window).find("html")[0].innerHTML
-
-        // 删除pre标签
-        preStartLocation = codeContent.indexOf("<pre"),
-        preEndLocation = codeContent.indexOf("</pre>")
-        codeContent = codeContent.slice(0, preStartLocation)
-                    + codeContent.slice(preEndLocation + 6, codeContent.length)
+        // 获取代码内容和html内容
+        var codeContent = data.slice(0, preStartLocation) + data.slice(preEndLocation, data.length)
 
         // code格式化,替换"<"和">"
         codeContent = html_beautify(codeContent)
@@ -105,19 +98,15 @@ function handleFile(file){
         codeContent = codeContent.replace(/>/g, "&gt;")
 
         // 把注释填入pre
-        pre.innerHTML = "\n" + codeContent + "\n"
+        data = data.slice(0, codeStartLocation) + "\n" + codeContent + "\n" + data.slice(codeEndLocation, data.length)
 
         // 格式化Html
-        htmlContent = "<!DOCTYPE html>\n"
-                    + "<html>\n"
-                    + $(window).find("html")[0].innerHTML
-                    + "\n</html>"
-        htmlContent = html_beautify(htmlContent, {
+        data = html_beautify(data, {
             unformatted: ['pre']
         })
 
         // 写入
-        fs.writeFile(file, htmlContent, function(e){
+        fs.writeFile(file, data, function(e){
             if(e) {
                 throw e
             }

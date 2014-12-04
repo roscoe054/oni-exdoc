@@ -78,14 +78,14 @@
             <pre ms-skip="" class="brush:html;gutter:false;toolbar:false">
 
 &lt;head&gt;
-        &lt;title&gt;carousel组件&lt;/title&gt;
-        &lt;meta charset="UTF-8"&gt;
-        &lt;meta name="viewport" content="width=device-width"&gt;
-        &lt;script src="../avalon.js"&gt;&lt;/script&gt;
-        &lt;script src="../highlight/shCore.js"&gt;&lt;/script&gt;
-        &lt;link type="text/css" rel="stylesheet" href="../style/avalon.doc.css"&gt;
-        &lt;script&gt;
-            require(["carousel/avalon.carousel"], function() {
+    &lt;title&gt;carousel组件&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width"&gt;
+    &lt;script src="../avalon.js"&gt;&lt;/script&gt;
+    &lt;script src="../highlight/shCore.js"&gt;&lt;/script&gt;
+    &lt;link type="text/css" rel="stylesheet" href="../style/avalon.doc.css"&gt;
+    &lt;script&gt;
+        require(["carousel/avalon.carousel"], function() {
                 avalon.define("demo", function(vm) {
                     vm.$opt1 = {
                         pictures: [
@@ -113,9 +113,9 @@
                 })
                 avalon.scan()
             })
-        &lt;/script&gt;
-        &lt;style type="text/css"&gt;
-            /* 自定义左右箭头的样式 */
+    &lt;/script&gt;
+    &lt;style type="text/css"&gt;
+        /* 自定义左右箭头的样式 */
             .oni-carousel .myArrowLeftClass,.oni-carousel .myArrowRightClass{
                 width: 48px; 
                 height: 48px; 
@@ -133,28 +133,24 @@
             .oni-carousel .myArrowRightClass:hover{
                 background-image: url(./images/ex-right-hover.png);
             }
-        &lt;/style&gt;
-    &lt;/head&gt;
-    
-    &lt;body&gt;
-        &lt;div class="wrapper" ms-controller="demo"&gt;
-            &lt;h1&gt;图片轮播组件-自定义不显示左右切换箭头和底部圆形选择部件 / 自定义鼠标经过不停止播放&lt;/h1&gt;
-            &lt;fieldset&gt;
-                &lt;legend&gt;自定义不显示左右切换箭头和底部圆形选择部件&lt;/legend&gt;
-                &lt;div ms-widget="carousel,carousel1,$opt1"&gt;&lt;/div&gt;
-            &lt;/fieldset&gt;
-            &lt;fieldset&gt;
-                &lt;legend&gt;自定义箭头arrowClass，并修改样式&lt;/legend&gt;
-                &lt;div ms-widget="carousel,carousel2,$opt2"&gt;&lt;/div&gt;
-            &lt;/fieldset&gt;
-            &lt;fieldset&gt;
-                &lt;legend&gt;自定义鼠标经过不停止播放&lt;/legend&gt;
-                &lt;div ms-widget="carousel,carousel3,$opt3"&gt;&lt;/div&gt;
-            &lt;/fieldset&gt;
-            
-        &lt;/div&gt;
-    
-
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="wrapper" ms-controller="demo"&gt;
+        &lt;h1&gt;图片轮播组件-自定义不显示左右切换箭头和底部圆形选择部件 / 自定义鼠标经过不停止播放&lt;/h1&gt;
+        &lt;fieldset&gt;
+            &lt;legend&gt;自定义不显示左右切换箭头和底部圆形选择部件&lt;/legend&gt;
+            &lt;div ms-widget="carousel,carousel1,$opt1"&gt;&lt;/div&gt;
+        &lt;/fieldset&gt;
+        &lt;fieldset&gt;
+            &lt;legend&gt;自定义箭头arrowClass，并修改样式&lt;/legend&gt;
+            &lt;div ms-widget="carousel,carousel2,$opt2"&gt;&lt;/div&gt;
+        &lt;/fieldset&gt;
+        &lt;fieldset&gt;
+            &lt;legend&gt;自定义鼠标经过不停止播放&lt;/legend&gt;
+            &lt;div ms-widget="carousel,carousel3,$opt3"&gt;&lt;/div&gt;
+        &lt;/fieldset&gt;
+    &lt;/div&gt;
 &lt;/body&gt;
 </pre>
         </div>

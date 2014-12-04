@@ -37,14 +37,14 @@
             <pre ms-skip="" class="brush:html;gutter:false;toolbar:false">
 
 &lt;head&gt;
-        &lt;title&gt;carousel组件&lt;/title&gt;
-        &lt;meta charset="UTF-8"&gt;
-        &lt;meta name="viewport" content="width=device-width"&gt;
-        &lt;script src="../avalon.js"&gt;&lt;/script&gt;
-        &lt;script src="../highlight/shCore.js"&gt;&lt;/script&gt;
-        &lt;link type="text/css" rel="stylesheet" href="../style/avalon.doc.css"&gt;
-        &lt;script&gt;
-            require(["carousel/avalon.carousel"], function() {
+    &lt;title&gt;carousel组件&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width"&gt;
+    &lt;script src="../avalon.js"&gt;&lt;/script&gt;
+    &lt;script src="../highlight/shCore.js"&gt;&lt;/script&gt;
+    &lt;link type="text/css" rel="stylesheet" href="../style/avalon.doc.css"&gt;
+    &lt;script&gt;
+        require(["carousel/avalon.carousel"], function() {
                 avalon.define("demo", function(vm) {
                     vm.$opt = {
                         pictures: [
@@ -59,20 +59,16 @@
                 })
                 avalon.scan()
             })
-        &lt;/script&gt;
-    &lt;/head&gt;
-    
-    &lt;body ms-controller="demo"&gt;
-        &lt;div class="wrapper"&gt;
-            &lt;h1&gt;图片轮播组件-默认配置图片轮播&lt;/h1&gt;
-            &lt;fieldset&gt;
-                &lt;legend&gt;默认配置图片轮播&lt;/legend&gt;
-                &lt;div ms-widget="carousel,carousel,$opt"&gt;&lt;/div&gt;
-            &lt;/fieldset&gt;
-            
-        &lt;/div&gt;
-    
-
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body ms-controller="demo"&gt;
+    &lt;div class="wrapper"&gt;
+        &lt;h1&gt;图片轮播组件-默认配置图片轮播&lt;/h1&gt;
+        &lt;fieldset&gt;
+            &lt;legend&gt;默认配置图片轮播&lt;/legend&gt;
+            &lt;div ms-widget="carousel,carousel,$opt"&gt;&lt;/div&gt;
+        &lt;/fieldset&gt;
+    &lt;/div&gt;
 &lt;/body&gt;
 </pre>
         </div>
